@@ -1,0 +1,49 @@
+/*! Reset Values */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100dvh;
+}
+nav {
+  background-color: bisque;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 15% 68.6% 15%;
+  gap: 10px;
+  height: 80%;
+}
+.adjustments {
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0px 15px 15px 0px;
+}
+.shadow-adjust {
+  margin: 25px 10px 25px 10px;
+}
+.shadow-label {
+  margin: 15px 0 15px 0;
+}
+.monitor {
+  background-color: greenyellow;
+  border-radius: 15px;
+}
+.other-adjustments {
+  background-color: gray;
+  border-radius: 15px 0px 0px 15px;
+
+}
+footer {
+                position: absolute;
+                bottom: 15px;
+                display: flex;
+}

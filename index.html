@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generator</title>
+    <!-- Css File -->
+    <link rel="stylesheet" href="./style.css" />
+    <!--! Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/b65786cee8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <i class="fa-solid fa-bars fa-2xl"></i>
+        <ul>
+          <li>Shadow Generator</li>
+          <li>Button Generator</li>
+        </ul>
+      </nav>
+    </header>
+    <section class="panel">
+      <div class="adjustments">
+                <h1>Adjustments:</h1>
+        <div class="adjust-header-number">
+          <label class="shadow-label" for="">Offset-X:</label>
+          <input type="number" id="of-x-n" />
+        </div>
+        <input
+          class="shadow-adjust"
+          type="range"
+          min="1"
+          max="100"
+          id="of-x-s"
+        />
+        <div class="adjust-header-number">
+          <label class="shadow-label" for="">Offset-Y:</label>
+          <input type="number" id="of-y-n" />
+        </div>
+        <input
+          class="shadow-adjust"
+          type="range"
+          min="1"
+          max="100"
+          id="of-y-s"
+        />
+        <div class="adjust-header-number">
+          <label class="shadow-label" for="">Blur:</label>
+          <input type="number" id="b-n" />
+        </div>
+        <input class="shadow-adjust" type="range" min="1" max="100" id="b-s" />
+        <div class="adjust-header-number">
+          <label class="shadow-label" for="">Spread:</label>
+          <input type="number" id="s-n" />
+        </div>
+        <input class="shadow-adjust" type="range" min="1" max="100" id="s-s" />
+        <div class="adjust-header-number">
+          <label class="shadow-label" for="">Color:</label>
+        </div>
+        <input class="shadow-adjust" type="color" />
+      </div>
+      <div class="monitor">
+        <div class="dull"></div>
+      </div>
+      <div class="other-adjustments"></div>
+    </section>
+
+    <footer>&copy 2023 Aurotem.</footer>
+
+    <!-- Javascript file -->
+    <script src="./index.js"></script>
+  </body>
+</html>
