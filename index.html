@@ -23,10 +23,11 @@
       </nav>
     </header>
     <section class="panel">
-      <div class="adjustments">
-                <h1>Adjustments:</h1>
+      <!-- Adjustments Area -->
+      <div id="adjustArea" class="adjustments">
+        <h1>Adjustments:</h1>
         <div class="adjust-header-number">
-          <label class="shadow-label" for="">Offset-X:</label>
+          <label class="shadow-label" for="of-x-n">Offset-X:</label>
           <input type="number" id="of-x-n" />
         </div>
         <input
@@ -37,7 +38,7 @@
           id="of-x-s"
         />
         <div class="adjust-header-number">
-          <label class="shadow-label" for="">Offset-Y:</label>
+          <label class="shadow-label" for="of-y-n">Offset-Y:</label>
           <input type="number" id="of-y-n" />
         </div>
         <input
@@ -48,23 +49,27 @@
           id="of-y-s"
         />
         <div class="adjust-header-number">
-          <label class="shadow-label" for="">Blur:</label>
+          <label class="shadow-label" for="b-n">Blur:</label>
           <input type="number" id="b-n" />
         </div>
         <input class="shadow-adjust" type="range" min="1" max="100" id="b-s" />
         <div class="adjust-header-number">
-          <label class="shadow-label" for="">Spread:</label>
+          <label class="shadow-label" for="s-n">Spread:</label>
           <input type="number" id="s-n" />
         </div>
         <input class="shadow-adjust" type="range" min="1" max="100" id="s-s" />
         <div class="adjust-header-number">
-          <label class="shadow-label" for="">Color:</label>
+          <label class="shadow-label" for="color">Color:</label>
         </div>
-        <input class="shadow-adjust" type="color" />
+        <input id="color" class="shadow-adjust" type="color" />
       </div>
-      <div class="monitor">
-        <div class="dull"></div>
+
+      <!-- Monitor -->
+      <div id="monitor" class="monitor">
+        <div id="dullObject" class="dull"></div>
       </div>
+
+      <!-- Other Adjustments -->
       <div class="other-adjustments"></div>
     </section>
 
