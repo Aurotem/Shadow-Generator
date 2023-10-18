@@ -28,7 +28,7 @@
         <h1>Adjustments:</h1>
         <div class="adjust-header-number">
           <label class="shadow-label" for="of-x-n">Offset-X:</label>
-          <input class="shadow-value" type="number" id="of-x-n" />
+          <input class="shadow-value" type="number" id="of-x-n" value="0" />
         </div>
         <input
           class="shadow-adjust"
@@ -39,7 +39,7 @@
         />
         <div class="adjust-header-number">
           <label class="shadow-label" for="of-y-n">Offset-Y:</label>
-          <input class="shadow-value" type="number" id="of-y-n" />
+          <input class="shadow-value" type="number" id="of-y-n" value="0" />
         </div>
         <input
           class="shadow-adjust"
@@ -50,7 +50,7 @@
         />
         <div class="adjust-header-number">
           <label class="shadow-label" for="b-n">Blur:</label>
-          <input class="shadow-value" type="number" id="b-n" />
+          <input class="shadow-value" type="number" id="b-n" value="0" />
         </div>
         <input
           class="shadow-adjust"
@@ -61,7 +61,7 @@
         />
         <div class="adjust-header-number">
           <label class="shadow-label" for="s-n">Spread:</label>
-          <input class="shadow-value" type="number" id="s-n" />
+          <input class="shadow-value" type="number" id="s-n" value="0" />
         </div>
         <input
           class="shadow-adjust"
@@ -73,7 +73,13 @@
         <div class="adjust-header-number">
           <label class="shadow-label" for="color">Color:</label>
         </div>
-        <input id="color" class="shadow-adjust" type="text" value="rgb(0, 0, 0, 0.1)" />
+        <div class="color-inputs">
+          <input id="r" class="shadow-adjust clr" type="text" value="0" />
+          <input id="g" class="shadow-adjust clr" type="text" value="0" />
+          <input id="b" class="shadow-adjust clr" type="text" value="0" />
+          <input id="a" class="shadow-adjust clr" type="text" value="0" />
+        </div>
+
       </div>
 
       <!-- Monitor -->
