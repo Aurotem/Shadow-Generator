@@ -13,17 +13,19 @@
     ></script>
   </head>
   <body>
+    <!-- This div covers all screen and adds blur effect when the show code button clicked. -->
+    <div id="filter" class="filter display-none"></div>
+    <!-- ------------------------------------------------------------ -->
     <header>
       <nav>
-        <i class="fa-solid fa-bars fa-2xl"></i>
+        <button id="show-code" class="show-code btn">Show Code</button>
         <ul>
           <li>Shadow Generator</li>
-          <li>Button Generator</li>
         </ul>
       </nav>
     </header>
     <section class="panel">
-      <!-- Adjustments Area -->
+      <!-- Adjustments Area, that little draggable div -->
       <div id="adjustArea" class="adjustments">
         <div id="dragElement">_</div>
         <h1>Adjustments:</h1>
@@ -113,9 +115,15 @@
         <div id="dullObject" class="dull"></div>
       </div>
 
-      <!-- Other Adjustments -->
-      <div class="other-adjustments"></div>
     </section>
+
+    <!-- Show code screen -->
+    <div id="show-div" class="show-div display-none">
+      <button id="close-btn" class="show-code close-show btn">Close</button>
+        <div id="code-part" class="code-part"></div>
+        <button id="copy" class="show-code btn">Copy</button>
+
+    </div>
 
     <footer>
       <span

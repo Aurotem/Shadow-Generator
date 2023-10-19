@@ -11,7 +11,7 @@ const values = document.querySelectorAll(".shadow-value");
 const colors = document.querySelectorAll(".clr-value");
 
 //Drag element
-const drag = document.getElementById('dragElement');
+const drag = document.getElementById("dragElement");
 
 for (let i = 0; i < values.length; i++) {
   values[i].addEventListener("input", function () {
@@ -78,3 +78,30 @@ const moveElement = function (e) {
   adjustments.style.left = mouseX + "px";
   adjustments.style.top = mouseY + "px";
 };
+
+//Show Code Elements
+const codeDiv = document.getElementById("show-div"); //Code Div
+const showCodeBtn = document.getElementById("show-code"); //Button in the nav
+const code = document.getElementById("code-part"); //Div that shows the code
+const closeCodeBtn = document.getElementById("close-btn"); //Close Button
+const filter = document.getElementById("filter"); //Filter
+const copyBtn = document.getElementById("copy"); //Copy button
+
+showCodeBtn.addEventListener("click", function () {
+  code.innerText = `box-shadow: ${values[0].value}px ${values[1].value}px ${values[2].value}px ${values[3].value}px rgb(${colors[1].value}, ${colors[2].value}, ${colors[3].value}, ${colors[4].value})`;
+  filter.classList.remove("display-none");
+  codeDiv.classList.remove("display-none");
+  copyBtn.innerText = 'Copy';
+  copyBtn.style.background = 'rgb(2, 117, 255)'
+});
+
+closeCodeBtn.addEventListener("click", function () {
+  filter.classList.add("display-none");
+  codeDiv.classList.add("display-none");
+});
+
+copyBtn.addEventListener("click", function () {
+  navigator.clipboard.writeText(code.innerText);
+  copyBtn.style.background = 'rgb(67, 226, 59)';
+  copyBtn.innerText = 'Copied!';
+});
