@@ -56,17 +56,35 @@ nav ul {
   gap: 10px;
   height: 80%;
 }
+
+/*! Drag Element */
+#dragElement {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 15px;
+  font-size: 25px;
+  right: 15px;
+  cursor: pointer;
+}
+
 /*! Panel Parts */
 .adjustments {
-  margin: 10% 0 0 5%;
-  padding-top: 10%;
+  position: fixed;
+  top: 10%;
+  left: 5%;
   background-color: white;
   box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   border-radius: 15px;
   text-align: center;
+  width: 300px;
 }
+.adjustments h1 {
+  margin-top: 15%;
+}
+
 .other-adjustments {
   z-index: -10;
   background-color: gray;
