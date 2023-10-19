@@ -7,6 +7,9 @@ const dullObject = document.getElementById("dullObject");
 const ranges = document.querySelectorAll(".shadow-adjust");
 const values = document.querySelectorAll(".shadow-value");
 
+// Color Section
+const colors = document.querySelectorAll(".clr-value");
+
 for (let i = 0; i < values.length; i++) {
   values[i].addEventListener("input", function () {
     ranges[0].value = values[0].value;
@@ -26,10 +29,18 @@ for (let i = 0; i < values.length; i++) {
   });
 }
 
-for (let i = 0; i < ranges.length; i++) {
-
+for (let i = 0; i < colors.length; i++) {
+  colors[i].addEventListener("input", function() {
+    const red = parseInt(colors[0].value.substr(1,2), 16);
+    const green = parseInt(colors[0].value.substr(3,2), 16);
+    const blue = parseInt(colors[0].value.substr(5,2), 16);
+    colors[1].value = red;
+    colors[2].value = green;
+    colors[3].value = blue;
+    monitorize();
+  })
 }
 
 const monitorize = function () {
-  dullObject.style.boxShadow = `${values[0].value}px ${values[1].value}px ${values[2].value}px ${values[3].value}px rgb(${color.value})`;
+  dullObject.style.boxShadow = `${values[0].value}px ${values[1].value}px ${values[2].value}px ${values[3].value}px rgb(${colors[1].value}, ${colors[2].value}, ${colors[3].value}, ${colors[4].value})`;
 };

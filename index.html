@@ -52,13 +52,7 @@
           <label class="shadow-label" for="b-n">Blur:</label>
           <input class="shadow-value" type="number" id="b-n" value="0" />
         </div>
-        <input
-          class="shadow-adjust"
-          type="range"
-          min="-100"
-          max="100"
-          id="b-s"
-        />
+        <input class="shadow-adjust" type="range" min="0" max="100" id="b-s" />
         <div class="adjust-header-number">
           <label class="shadow-label" for="s-n">Spread:</label>
           <input class="shadow-value" type="number" id="s-n" value="0" />
@@ -72,14 +66,45 @@
         />
         <div class="adjust-header-number">
           <label class="shadow-label" for="color">Color:</label>
+          <input
+            class="clr-value clr-hex"
+            type="color"
+            name="colorInput"
+            id="color"
+          />
         </div>
-        <div class="color-inputs">
-          <input id="r" class="shadow-adjust clr" type="text" value="0" />
-          <input id="g" class="shadow-adjust clr" type="text" value="0" />
-          <input id="b" class="shadow-adjust clr" type="text" value="0" />
-          <input id="a" class="shadow-adjust clr" type="text" value="0" />
+        <div class="--color -inputs">
+          <input
+            class="clr-value shadow-adjust clr"
+            id="r"
+            type="number"
+            value="0"
+          />
+          <input
+            class="clr-value shadow-adjust clr"
+            id="g"
+            type="number"
+            value="0"
+          />
+          <input
+            class="clr-value shadow-adjust clr"
+            id="b"
+            type="number"
+            value="0"
+          />
+          <input
+            class="clr-value shadow-adjust clr"
+            id="a"
+            type="number"
+            value="0.1"
+          />
         </div>
-
+        <div class="--color -labels">
+          <label for="r">R</label>
+          <label for="g">G</label>
+          <label for="b">B</label>
+          <label for="a">A</label>
+        </div>
       </div>
 
       <!-- Monitor -->
@@ -91,7 +116,21 @@
       <div class="other-adjustments"></div>
     </section>
 
-    <footer>&copy 2023 Aurotem.</footer>
+    <footer>
+      <span
+        >&copy 2023 Aurotem
+        <div class="links">
+          <a href="https://www.linkedin.com/in/melikcan-fidan/"
+            ><i class="fa-brands fa-linkedin fa-xl" style="color: #000000"></i
+          ></a>
+          <a href="https://github.com/Aurotem"
+            ><i class="fa-brands fa-github fa-xl" style="color: #000000"></i
+          ></a>
+          <a href="https://www.instagram.com/melihcanfidan/"
+            ><i class="fa-brands fa-instagram fa-xl" style="color: #000000"></i
+          ></a></div
+      ></span>
+    </footer>
 
     <!-- Javascript file -->
     <script src="./index.js"></script>
