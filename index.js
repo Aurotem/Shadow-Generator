@@ -1,18 +1,69 @@
-// Areas
+//* Areas
 const adjustments = document.getElementById("adjustArea");
 const monitor = document.getElementById("monitor");
 const dullObject = document.getElementById("dullObject");
 
-// Adjust instruments
+//*Shadow Adjust instruments
 const ranges = document.querySelectorAll(".shadow-adjust");
 const values = document.querySelectorAll(".shadow-value");
 
-// Color Section
+//* Color Section
 const colors = document.querySelectorAll(".clr-value");
 
-//Drag element
+//*Drag element
 const drag = document.getElementById("dragElement");
 
+//*Box Drawer
+const boxDrawer = document.getElementById("box-drawer");
+const boxDiv = document.getElementById("box-div");
+const arrow = document.getElementById("arrow");
+
+//*Box Adjust instruments
+const boxRanges = document.querySelectorAll(".box-adjust");
+const boxValues = document.querySelectorAll(".box-value");
+//*Color Adjust instruments
+const boxColor = document.getElementById("box-color");
+const bgColor = document.getElementById("bg-color");
+
+//! Color Change Events
+boxColor.addEventListener('input',() => {
+  dullObject.style.background= boxColor.value;
+});
+bgColor.addEventListener('input',() => {
+  monitor.style.background= bgColor.value;
+});
+
+//! Making input numbers equal to ranges in Box Adjustments Div
+for (let i = 0; i < boxValues.length; i++) {
+  boxValues[i].addEventListener("input", function () {
+    boxRanges[0].value = boxValues[0].value;
+    boxRanges[1].value = boxValues[1].value;
+    boxRanges[2].value = boxValues[2].value;
+    boxRanges[3].value = boxValues[3].value;
+    monitorize();
+  });
+  //! Vice Versa
+  boxRanges[i].addEventListener("input", function () {
+    boxValues[0].value = boxRanges[0].value;
+    boxValues[1].value = boxRanges[1].value;
+    boxValues[2].value = boxRanges[2].value;
+    boxValues[3].value = boxRanges[3].value;
+    monitorize();
+  });
+}
+
+//! Drawer
+boxDrawer.addEventListener("click", () => {
+  if (boxDiv.style.transform == "translateX(250px)") {
+    boxDiv.style.transform = "translateX(0px)";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    boxDiv.style.transform = "translateX(250px)";
+    arrow.style.transform = "rotate(180deg)";
+  }
+});
+
+//! Making input numbers equal to ranges in Shadow Adjustments div
 for (let i = 0; i < values.length; i++) {
   values[i].addEventListener("input", function () {
     ranges[0].value = values[0].value;
@@ -22,7 +73,7 @@ for (let i = 0; i < values.length; i++) {
     console.log(ranges[0]);
     monitorize();
   });
-
+  //! Vice Versa
   ranges[i].addEventListener("input", function () {
     values[0].value = ranges[0].value;
     values[1].value = ranges[1].value;
@@ -32,6 +83,7 @@ for (let i = 0; i < values.length; i++) {
   });
 }
 
+//! Colors
 for (let i = 0; i < colors.length; i++) {
   colors[i].addEventListener("input", function () {
     const red = parseInt(colors[0].value.substr(1, 2), 16);
@@ -44,8 +96,13 @@ for (let i = 0; i < colors.length; i++) {
   });
 }
 
+//! Monitoring the changes
 const monitorize = function () {
   dullObject.style.boxShadow = `${values[0].value}px ${values[1].value}px ${values[2].value}px ${values[3].value}px rgb(${colors[1].value}, ${colors[2].value}, ${colors[3].value}, ${colors[4].value})`;
+  dullObject.style.borderRadius = boxValues[2].value + "px";
+  dullObject.style.width = boxValues[0].value + "px";
+  dullObject.style.height = boxValues[1].value + "px";
+  dullObject.style.transform = `translateX(${boxValues[3].value}%)`;
 };
 
 // Making our adjust section draggable.
@@ -77,6 +134,8 @@ const moveElement = function (e) {
   const mouseY = e.clientY - posY;
   adjustments.style.left = mouseX + "px";
   adjustments.style.top = mouseY + "px";
+  boxDiv.style.left = mouseX + 50 + "px";
+  boxDiv.style.top = mouseY+ 60+ "px";
 };
 
 //Show Code Elements
@@ -91,8 +150,8 @@ showCodeBtn.addEventListener("click", function () {
   code.innerText = `box-shadow: ${values[0].value}px ${values[1].value}px ${values[2].value}px ${values[3].value}px rgb(${colors[1].value}, ${colors[2].value}, ${colors[3].value}, ${colors[4].value})`;
   filter.classList.remove("display-none");
   codeDiv.classList.remove("display-none");
-  copyBtn.innerText = 'Copy';
-  copyBtn.style.background = 'rgb(2, 117, 255)'
+  copyBtn.innerText = "Copy";
+  copyBtn.style.background = "rgb(2, 117, 255)";
 });
 
 closeCodeBtn.addEventListener("click", function () {
@@ -102,6 +161,6 @@ closeCodeBtn.addEventListener("click", function () {
 
 copyBtn.addEventListener("click", function () {
   navigator.clipboard.writeText(code.innerText);
-  copyBtn.style.background = 'rgb(67, 226, 59)';
-  copyBtn.innerText = 'Copied!';
+  copyBtn.style.background = "rgb(67, 226, 59)";
+  copyBtn.innerText = "Copied!";
 });

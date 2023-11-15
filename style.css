@@ -60,6 +60,10 @@ nav ul {
   background-color: rgb(2, 117, 255);
   border: none;
 }
+.gen-code-header {
+  margin-top: 15px;
+  font-size: 22px;
+}
 
 /*! Show Code Div */
 .show-div {
@@ -80,7 +84,7 @@ nav ul {
 .code-part {
   display: flex;
   width: fit-content;
-  margin-top: 10%;
+  margin-top: 3%;
   padding: 0 10px 0 10px;
   height: 35px;
   background-color: rgba(0, 0, 0, 0.1);
@@ -136,15 +140,13 @@ nav ul {
 /*! Panel Parts */
 .adjustments {
   position: fixed;
-  top: 10%;
-  left: 2%;
-  background-color: white;
+  top:80px;
+  left: 30px;
   box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   border-radius: 15px;
   text-align: center;
-  width: 300px;
 }
 .adjustments h1 {
   margin-top: 15%;
@@ -172,9 +174,14 @@ nav ul {
 
 /*! Adjustment Instruments */
 .shadow-adjust {
-  margin: 15px 10px 15px 10px;
+  margin: 10px 10px 15px 10px;
 }
-.shadow-label {
+.box-adjust {
+  margin: 5px 10px 5px 0;
+  width: 80%;
+}
+.shadow-label,
+.box-label {
   margin: 15px 0 15px 0;
 }
 .adjustments input {
@@ -182,19 +189,28 @@ nav ul {
 }
 
 .adjust-header-number {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  margin: 0 10px;
 }
-.shadow-value {
-  justify-self: end;
-  width: 30%;
-  height: 50%;
+.shadow-value,
+.box-value {
+  text-align: center;
+  width: 40px;
+  height: 25px;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
   border: 0px;
   background-color: rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin: 0 10px 0 0;
+}
+
+/*! Number input arrows */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 /*! Color Adjustment Section */
 .--color {
@@ -221,4 +237,38 @@ nav ul {
   size: 10px;
   margin-left: auto;
   margin-right: 10px;
+}
+
+/*! AdjustDiv Area */
+#box-div {
+  top: 140px;
+  position: fixed;
+  left: 80px;
+  border-radius: 0 20px 20px 0;
+  z-index: -10;
+  background-color: #ffffff;
+  width: 250px;
+  height: 450px;
+  box-shadow: 0px 0px 60px 20px rgba(0, 0, 0, 0.1);
+}
+#box-drawer {
+  position: fixed;
+  height: 80px;
+  width: 25px;
+  transform: translate(250px, 170px);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  border-radius: 0 20px 20px 0;
+  justify-content: center;
+  padding: 0 5px 0 0;
+  cursor: pointer;
+}
+#shadow-div {
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 300px;
+  background-color: #ffffff;
 }
