@@ -34,7 +34,7 @@ footer .links {
 
 /*! Navbar */
 nav {
-  background-color: rgba(156, 184, 195, 0.2);
+  background-color: rgba(215, 215, 215, 0.2);
   display: flex;
   justify-content: space-between;
   height: 50px;
@@ -59,6 +59,7 @@ nav ul {
   border-radius: 8px;
   background-color: rgb(2, 117, 255);
   border: none;
+  margin-left: 10px;
 }
 .gen-code-header {
   margin-top: 15px;
