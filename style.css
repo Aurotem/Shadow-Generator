@@ -273,3 +273,8 @@ input::-webkit-inner-spin-button {
   width: 300px;
   background-color: #ffffff;
 }
+
+/*! Adding transition to box adjust div */
+.trans {
+  transition: .4s ease-out;
+}

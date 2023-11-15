@@ -55,13 +55,20 @@ for (let i = 0; i < boxValues.length; i++) {
 //! Drawer
 boxDrawer.addEventListener("click", () => {
   if (boxDiv.style.transform == "translateX(250px)") {
+    boxDiv.classList.add('trans');
+    const removeTransition = setTimeout(remTrans,400);
     boxDiv.style.transform = "translateX(0px)";
     arrow.style.transform = "rotate(0deg)";
   } else {
+    boxDiv.classList.add('trans');
+    const removeTransition = setTimeout(remTrans,400);
     boxDiv.style.transform = "translateX(250px)";
     arrow.style.transform = "rotate(180deg)";
   }
 });
+function remTrans() {
+  boxDiv.classList.remove('trans')
+}
 
 //! Making input numbers equal to ranges in Shadow Adjustments div
 for (let i = 0; i < values.length; i++) {
