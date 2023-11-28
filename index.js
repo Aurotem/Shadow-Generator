@@ -52,7 +52,29 @@ for (let i = 0; i < boxValues.length; i++) {
   });
 }
 let winWidth = window.innerWidth;
-window.addEventListener('change', () => {winWidth = window.innerWidth})
+window.addEventListener('resize', () => {
+  winWidth = window.innerWidth
+  if(winWidth > 400) {
+    if (boxDiv.style.transform == "translateX(-80px)") {
+      boxDiv.style.transform = "translateX(0px)";
+    }else if (boxDiv.style.transform == "translateX(70px)") {
+      boxDiv.style.transform = "translateX(250px)"
+    }
+    boxDiv.style.left = '50px';
+
+  }
+  if (winWidth < 400) {
+    adjustments.style.left = '0px';
+    adjustments.style.top = '80px';
+    boxDiv.style.left = '80px';
+    boxDiv.style.top = '100px';
+    if (boxDiv.style.transform == "translateX(250px)"){
+      boxDiv.style.transform = "translateX(70px)";
+    }else if (boxDiv.style.transform == "translateX(0px)"){
+      boxDiv.style.transform = "translateX(-80px)";
+    }
+  }
+})
 
 //! Drawer
 boxDrawer.addEventListener("click", () => {
@@ -68,6 +90,7 @@ boxDrawer.addEventListener("click", () => {
       boxDiv.style.transform = "translateX(250px)";
       arrow.style.transform = "rotate(180deg)";
     }
+
   } else {
     if (boxDiv.style.transform == "translateX(70px)") {
       boxDiv.classList.add("trans");
