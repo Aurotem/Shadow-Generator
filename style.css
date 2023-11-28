@@ -166,8 +166,8 @@ nav ul {
   background-color: rgb(242, 245, 246);
 }
 .dull {
-  height: 30%;
-  width: 30%;
+  height: 165px;
+  width: 165px;
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0px 0px 0px 0px;
@@ -277,4 +277,31 @@ input::-webkit-inner-spin-button {
 /*! Adding transition to box adjust div */
 .trans {
   transition: .4s ease-out;
+}
+
+/*! Mobile screen width */
+
+@media screen and (max-width: 400px) {
+  #shadow-div {
+    width: 150px;
+    left:0px;
+    border-radius: 0 15px 15px 0;
+
+  }
+  #dragElement {
+    display: none;
+  }
+  .adjustments {
+    left:0px;
+    border-radius: 0 15px 15px 0;
+  }
+  #box-div {
+    top:100px;
+    width: 150px;
+    transform: translateX(-80px);
+    height: 525px;
+  }
+  #box-drawer {
+    transform: translate(150px, 200px);
+  }
 }
